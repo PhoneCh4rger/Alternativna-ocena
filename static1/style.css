@@ -1,4 +1,4 @@
-/* Globalne nastavitve */
+/* jano */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -18,7 +18,7 @@ h1 {
     margin-top: 30px;
 }
 
-/* Slogi za forme (login, registracija, ipd.) */
+/* Slogi  */
 form {
     background-color: #fff;
     padding: 20px;
@@ -53,7 +53,7 @@ form button:hover {
     background-color: #0056b3;
 }
 
-/* Kartice za objave ali zapiske */
+
 .card {
     background-color: #fff;
     padding: 15px;
@@ -125,4 +125,27 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
+}
+
+#logout-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 5px;
+    background-color: #dc3545;
+    width: auto;
+}
+
+#logout-button:hover {
+    background-color: #c82333;
+}
+
+#brez_racuna_link {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+#ze_registriran_link {
+    display: inline-block;
+    margin-top: 10px;
 }
