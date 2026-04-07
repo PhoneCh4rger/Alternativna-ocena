@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
     <title>Zapiski</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 <body>
 
@@ -28,37 +28,37 @@
 
 <script>
 function dodaj() {
-    let naslov = document.getElementById("naslov").value;
-    let vsebina = document.getElementById("vsebina").value;
+    let naslov = $("#naslov").val();
+    let vsebina = $("#vsebina").val();
 
     if (naslov == "" || vsebina == "") {
         alert("Izpolni vse");
         return;
     }
 
-    fetch("/dodaj", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/x-www-form-urlencoded"
+    $.ajax({
+        url: "/dodaj",
+        type: "POST",
+        data: {
+            naslov: naslov,
+            vsebina: vsebina
         },
-        body: "naslov=" + encodeURIComponent(naslov) +
-              "&vsebina=" + encodeURIComponent(vsebina)
-    })
-    .then(() => {
-        location.reload();
+        success: function() {
+            location.reload();
+        }
     });
 }
 
 function izbrisi(naslov) {
-    fetch("/izbrisi", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/x-www-form-urlencoded"
+    $.ajax({
+        url: "/izbrisi",
+        type: "POST",
+        data: {
+            naslov: naslov
         },
-        body: "naslov=" + encodeURIComponent(naslov)
-    })
-    .then(() => {
-        location.reload();
+        success: function() {
+            location.reload();
+        }
     });
 }
 
