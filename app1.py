@@ -1,3 +1,5 @@
+# nehi pozablat pip install flask, pip install tinydb, python app1.py
+
 from flask import Flask, render_template, request, redirect, session
 from tinydb import TinyDB, Query
 
